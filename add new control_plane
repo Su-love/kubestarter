@@ -1,0 +1,6 @@
+#Run this in the existing control plane to get the certificate key (1)
+sudo kubeadm init phase upload-certs --upload-certs
+# Run this command to join the control plane  (2)
+kubeadm token create --print-join-command
+# Run this to join new control plane node to the cluster
+<output from 2> --certificate-key <value from 1> --control-plane 
